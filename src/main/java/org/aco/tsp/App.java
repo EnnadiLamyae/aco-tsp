@@ -28,10 +28,26 @@ public class App
         Environment environment = new Environment(FileReader.getDistances(path, file));
         Statistics statistics = new Statistics(file, environment, FileReader.getCoordinates(path, file));
 
+        
         // Startup part
         environment.generateNearestNeighborList();
         environment.generateAntPopulation();
         environment.generateEnvironment();
+
+        System.out.println("==================ANT COLONY OPTIMIZATION FOR TRAVELLING SALESMAN PROBLEM==================");
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("                         Parameter |    Value                           ");
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Pheromone evaporation rate         |    "+Parameters.rho);
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Pheromone importance               |    "+Parameters.alpha);
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Heuristic importance               |    "+Parameters.beta);
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Size of ant population             |    "+Parameters.antPopSize);
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Iterations to find a good solution |    "+Parameters.iterationsMax);
+        System.out.println("------------------------------------------------------------------------");
 
         // Repeat the ants behavior by n times
         int n = 0;
@@ -41,6 +57,9 @@ public class App
             statistics.calculateStatistics(n);
             n++;
         }
+        
+        System.out.println("Evaluation : "+statistics.getBestSoFar());
         System.out.println("Finished");
+        
     }
 }

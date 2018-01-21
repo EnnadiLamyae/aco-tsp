@@ -7,7 +7,22 @@ import org.aco.tsp.visualizer.Visualizer;
 public class Statistics {
 
 	 	private Environment environment;
-	    private double bestSoFar = Double.MAX_VALUE;
+	    public double getBestSoFar() {
+			return bestSoFar;
+		}
+
+		public void setBestSoFar(double bestSoFar) {
+			this.bestSoFar = bestSoFar;
+		}
+
+		public int[] getBestTourSoFar() {
+			return bestTourSoFar;
+		}
+
+		public void setBestTourSoFar(int[] bestTourSoFar) {
+			this.bestTourSoFar = bestTourSoFar;
+		}
+		private double bestSoFar = Double.MAX_VALUE;
 	    private int[] bestTourSoFar;
 	    private Visualizer visualizer;
 	    private String tspFile;

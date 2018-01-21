@@ -9,9 +9,9 @@ public class Parameters {
    //Heuristic importance
     public static double beta = 2.0;
     //Size of ant population
-    public static int antPopSize = 20;
+    public static int antPopSize = 300;
     //Size of nearest neighbor list for each vertex
-    public static int NNSize = 20;
+    public static int NNSize = 30;
     //Number of iterations to find a good solution
-    public static int iterationsMax = 150;
+    public static int iterationsMax = 1000;
 }
